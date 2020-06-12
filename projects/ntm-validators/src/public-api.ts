@@ -5,4 +5,4 @@
 export * from './lib/ntm-validators.service';
 export * from './lib/ntm-validators.component';
 export * from './lib/ntm-validators.module';
-export * from './lib/cpf.validator';
+export * from './lib/validators/index';

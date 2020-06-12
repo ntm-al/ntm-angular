@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { NtmValidatorsComponent } from './ntm-validators.component';
-
-
+import { CpfMaskDirective } from './directives/cpf-mask.directive';
+import { InstagramMaskDirective } from './directives/instagram-mask.directive';
+import { PhoneMaskDirective } from './directives/phone-mask.directive';
+import { TwitterMaskDirective } from './directives/twitter-mask.directive';
 
 @NgModule({
-  declarations: [NtmValidatorsComponent],
-  imports: [
+  declarations: [
+    NtmValidatorsComponent,
+    CpfMaskDirective,
+    InstagramMaskDirective,
+    PhoneMaskDirective,
+    TwitterMaskDirective,
   ],
-  exports: [NtmValidatorsComponent]
+  imports: [],
+  exports: [NtmValidatorsComponent],
 })
-export class NtmValidatorsModule { }
+export class NtmValidatorsModule {}
