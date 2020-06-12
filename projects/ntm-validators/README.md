@@ -16,13 +16,11 @@
 - Phone (mask)
 - Twitter
 
-## Pipes
+## Pipes (in progress)
 
 ## TODO:
 
 - [ ] Create test to cpf validator
 - [ ] Create test to twitter validator
 - [ ] Create test to instagram validator
-- [ ] Mercury
-- [ ] Mercury
-- [ ] Mercury
+- [ ] Pipes
