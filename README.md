@@ -30,5 +30,7 @@ npm publish
 - [ ] Create test to twitter validator
 - [ ] Create test to instagram validator
 - [ ] Adding ESLint
+- [ ] Typescript integration to see documentation
+- [ ] Unify all validator to unique code
 - [ ] Lint all files
 - [ ] Pipes
