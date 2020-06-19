@@ -14,6 +14,12 @@ import { TwitterMaskDirective } from './directives/twitter-mask.directive';
     TwitterMaskDirective,
   ],
   imports: [],
-  exports: [NtmValidatorsComponent],
+  exports: [
+    NtmValidatorsComponent,
+    CpfMaskDirective,
+    InstagramMaskDirective,
+    PhoneMaskDirective,
+    TwitterMaskDirective,
+  ],
 })
 export class NtmValidatorsModule {}
