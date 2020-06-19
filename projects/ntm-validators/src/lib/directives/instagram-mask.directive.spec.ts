@@ -5,7 +5,7 @@ import { SharedModule } from '../shared.module';
 import { InstagramMaskDirective } from './instagram-mask.directive';
 
 @Component({
-  template: `<input type="text" twitterMask>`
+  template: '<input type="text" twitterMask>'
 })
 class TestInstagramMaskDirectiveComponent {
 }
@@ -25,24 +25,24 @@ describe('InstagramMaskDirective', () => {
 
   it('should return correct formated instagram user string', () => {
     const arr = [{
-      input: "@user",
-      expect: "@user",
+      input: '@user',
+      expect: '@user',
     },
     {
-      input: "@úser",
-      expect: "@ser",
+      input: '@úser',
+      expect: '@ser',
     },
     {
-      input: "@úser_3",
-      expect: "@ser_3",
+      input: '@úser_3',
+      expect: '@ser_3',
     },
     {
-      input: "@us-er",
-      expect: "@us-er",
+      input: '@us-er',
+      expect: '@us-er',
     }];
-    let instagramMask = new InstagramMaskDirective(fixture);
+    const instagramMask = new InstagramMaskDirective(fixture);
     arr.forEach(arrage => {
       expect(instagramMask.createMask(arrage.input)).toBe(arrage.expect);
-    })
+    });
   });
 });

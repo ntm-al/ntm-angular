@@ -5,7 +5,7 @@ import { SharedModule } from '../shared.module';
 import { CpfMaskDirective } from './cpf-mask.directive';
 
 @Component({
-  template: `<input type="text" appCpfMask>`
+  template: '<input type="text" appCpfMask>'
 })
 class TestCpfMaskDirectiveComponent {
 }

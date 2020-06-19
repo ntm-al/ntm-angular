@@ -2,7 +2,7 @@ import { FormControl } from '@angular/forms';
 
 export class ValidateEmail {
   static valid(control: FormControl) {
-    if (!control.value) return null;
+    if (!control.value) {return null;}
     if(ValidateEmail.valid_email(control.value)){
       return null;
     }
@@ -10,7 +10,7 @@ export class ValidateEmail {
       validateEmail: {
         valid: false
       }
-    }
+    };
   }
   static valid_email(email) {
     const REG_EMAIL = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;

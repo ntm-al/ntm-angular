@@ -18,7 +18,7 @@ export class TwitterMaskDirective implements OnInit {
   @HostListener('ngModelChange')
   @HostListener('input')
   setMask() {
-    let mask = this.createMask(this.el.nativeElement.value);
+    const mask = this.createMask(this.el.nativeElement.value);
     if (this.el.nativeElement.value !== this.previousValue) {
       this.el.nativeElement.value = mask;
       this.previousValue = mask;
