@@ -187,7 +187,6 @@ module.exports = {
     'one-var': ['error', 'never'],
     'prefer-const': 'error',
     'quote-props': ['error', 'as-needed'],
-    radix: 'error',
     'require-await': 'off',
     'use-isnan': 'error',
     'valid-typeof': 'off',

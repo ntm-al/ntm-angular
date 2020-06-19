@@ -1,14 +1,12 @@
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { SharedModule } from '../shared.module';
 import { PhoneMaskDirective } from './phone-mask.directive';
 
 @Component({
-  template: '<input type="text" phoneMask>'
+  template: '<input type="text" phoneMask>',
 })
-class TestPhoneMaskDirectiveComponent {
-}
+class TestPhoneMaskDirectiveComponent {}
 
 describe('PhoneMaskDirective', () => {
   let component: TestPhoneMaskDirectiveComponent;
@@ -16,8 +14,8 @@ describe('PhoneMaskDirective', () => {
   let inputEl: DebugElement;
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [SharedModule],
-      declarations: [TestPhoneMaskDirectiveComponent]
+      imports: [],
+      declarations: [TestPhoneMaskDirectiveComponent],
     }).createComponent(TestPhoneMaskDirectiveComponent);
     component = fixture.componentInstance;
     inputEl = fixture.debugElement.query(By.css('input'));
@@ -58,21 +56,23 @@ describe('PhoneMaskDirective', () => {
   });
 
   it('should return correct formated phone string', () => {
-    const arr = [{
-      input: '82999',
-      expect: '82 999',
-    },
-    {
-      input: '8299999',
-      expect: '82 99999',
-    },
-    {
-      input: '82999999999',
-      expect: '82 99999-9999',
-    }];
+    const arr = [
+      {
+        input: '82999',
+        expect: '82 999',
+      },
+      {
+        input: '8299999',
+        expect: '82 99999',
+      },
+      {
+        input: '82999999999',
+        expect: '82 99999-9999',
+      },
+    ];
     const phoneMask = new PhoneMaskDirective(fixture);
-    arr.forEach(arrage => {
-      expect(phoneMask.createMask(arrage.input)).toBe(arrage.expect);
+    arr.forEach((arrage) => {
+      void expect(phoneMask.createMask(arrage.input)).toBe(arrage.expect);
     });
   });
 });

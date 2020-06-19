@@ -37,3 +37,4 @@ npm publish
 - [ ] Create default service with toaster
 - [ ] Create a example project to show how to use
 - [ ] Create a static page with githubPages
+- [ ] Fix validators tests

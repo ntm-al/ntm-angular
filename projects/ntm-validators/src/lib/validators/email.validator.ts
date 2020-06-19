@@ -1,19 +1,18 @@
-import { FormControl } from '@angular/forms';
+/* eslint-disable max-len */
+import { AbstractControl } from '@angular/forms';
+import { IValidator } from '../interfaces/validators.interface';
 
-export class ValidateEmail {
-  static valid(control: FormControl) {
-    if (!control.value) {return null;}
-    if(ValidateEmail.valid_email(control.value)){
-      return null;
-    }
-    return {
-      validateEmail: {
-        valid: false
-      }
-    };
+export function ValidateEmail(control: AbstractControl): IValidator {
+  // tslint:disable-next-line: max-line-length
+  const REG_EMAIL = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  const emailValue = control.value as string;
+
+  if (!emailValue || (emailValue && REG_EMAIL.test(emailValue.toLowerCase()))) {
+    return null;
   }
-  static valid_email(email) {
-    const REG_EMAIL = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    return REG_EMAIL.test(email.toLowerCase());
-  }
+  return {
+    validate: false,
+    message: 'Email inválido',
+  };
 }

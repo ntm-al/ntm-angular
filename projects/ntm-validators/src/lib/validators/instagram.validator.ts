@@ -1,19 +1,18 @@
-import { FormControl } from '@angular/forms';
+/* eslint-disable max-len */
+import { AbstractControl } from '@angular/forms';
+import { IValidator } from '../interfaces/validators.interface';
 
-export class ValidateInstagram {
-  static valid(control: FormControl) {
-    if (!control.value) {return null;}
-    if(ValidateInstagram.valid_instagram(control.value)){
-      return null;
-    }
-    return {
-      validateInstagram: {
-        valid: false
-      }
-    };
+export function ValidateInstagram(control: AbstractControl): IValidator {
+  // tslint:disable-next-line: max-line-length
+  const REG_INSTAGRAM = /^[a-zA-Z0-9_.]{0,30}/i;
+
+  const instagramValue = control.value as string;
+
+  if (!instagramValue || (instagramValue && REG_INSTAGRAM.test(instagramValue.toLowerCase()))) {
+    return null;
   }
-  static valid_instagram(instagram) {
-    const REG_INSTAGRAM = /^[a-zA-Z0-9_.]{0,30}/i;
-    return REG_INSTAGRAM.test(instagram.toLowerCase());
-  }
+  return {
+    validate: false,
+    message: 'Instagram inválido',
+  };
 }
