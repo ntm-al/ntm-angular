@@ -1,4 +1,4 @@
-# NtmValidators
+# NtmAngular
 
 ## Validators
 
@@ -18,6 +18,10 @@
 
 ## Pipes (in progress)
 
+- Difference Time
+- First and last name
+- number to month
+
 ## Publishing
 
 ng build ntm-validators --prod
@@ -26,9 +30,12 @@ npm publish
 
 ## TODO:
 
-- [ ] Create test to cpf validator
-- [ ] Create test to twitter validator
-- [ ] Create test to instagram validator
-- [ ] Adding ESLint
-- [ ] Lint all files
-- [ ] Pipes
+- [ ] Create test to directives
+- [ ] Create test to validators
+- [ ] Create test to pipes
+- [x] Adding ESLint
+- [ ] Typescript integration to see documentation
+- [x] Lint all files
+- [x] Pipes
+- [ ] Create a example project to show how to use
+- [ ] Create a static page with githubPages
