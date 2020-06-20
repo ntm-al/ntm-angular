@@ -30,9 +30,9 @@ npm publish
 
 ## TODO:
 
-- [ ] Create test to cpf validator
-- [ ] Create test to twitter validator
-- [ ] Create test to instagram validator
+- [ ] Create test to directives
+- [ ] Create test to validators
+- [ ] Create test to pipes
 - [x] Adding ESLint
 - [ ] Typescript integration to see documentation
 - [ ] Unify all validator to unique code
