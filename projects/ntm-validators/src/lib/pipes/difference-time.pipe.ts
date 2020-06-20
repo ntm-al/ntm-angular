@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Pipe, PipeTransform, ElementRef } from '@angular/core';
 
 @Pipe({
@@ -6,7 +9,7 @@ import { Pipe, PipeTransform, ElementRef } from '@angular/core';
 export class DifferenceTimePipe implements PipeTransform {
   constructor(private elementRef: ElementRef) {}
 
-  transform(date: Date) {
+  transform(date: Date): string {
     const current: Date = new Date();
     const pipeDate: Date = new Date(date);
 
