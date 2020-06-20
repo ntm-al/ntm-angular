@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -9,7 +12,6 @@ import { PhoneMaskDirective } from './phone-mask.directive';
 class TestPhoneMaskDirectiveComponent {}
 
 describe('PhoneMaskDirective', () => {
-  let component: TestPhoneMaskDirectiveComponent;
   let fixture: ComponentFixture<TestPhoneMaskDirectiveComponent>;
   let inputEl: DebugElement;
   beforeEach(() => {
@@ -17,7 +19,6 @@ describe('PhoneMaskDirective', () => {
       imports: [],
       declarations: [TestPhoneMaskDirectiveComponent],
     }).createComponent(TestPhoneMaskDirectiveComponent);
-    component = fixture.componentInstance;
     inputEl = fixture.debugElement.query(By.css('input'));
   });
   it('should apply mask for number with 8 digits', () => {
@@ -28,7 +29,7 @@ describe('PhoneMaskDirective', () => {
     const input = inputEl.nativeElement;
     input.value = arr.input;
     input.dispatchEvent(new Event('input'));
-    expect(input.value).toBe(arr.expect);
+    void expect(input.value).toBe(arr.expect);
   });
 
   it('should not apply mask for not valid number', () => {
@@ -40,7 +41,7 @@ describe('PhoneMaskDirective', () => {
     input.value = arr.input;
     input.dispatchEvent(new Event('input'));
     inputEl.triggerEventHandler('input', null);
-    expect(input.value).toBe(arr.expect);
+    void expect(input.value).toBe(arr.expect);
   });
 
   it('should apply mask for number with 9 digits', () => {
@@ -52,7 +53,7 @@ describe('PhoneMaskDirective', () => {
     input.value = arr.input;
     input.dispatchEvent(new Event('input'));
     inputEl.triggerEventHandler('input', null);
-    expect(input.value).toBe(arr.expect);
+    void expect(input.value).toBe(arr.expect);
   });
 
   it('should return correct formated phone string', () => {
