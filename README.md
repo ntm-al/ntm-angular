@@ -18,6 +18,10 @@
 
 ## Pipes (in progress)
 
+- Difference Time
+- First and last name
+- number to month
+
 ## Publishing
 
 ng build ntm-validators --prod
@@ -29,11 +33,11 @@ npm publish
 - [ ] Create test to cpf validator
 - [ ] Create test to twitter validator
 - [ ] Create test to instagram validator
-- [ ] Adding ESLint
+- [x] Adding ESLint
 - [ ] Typescript integration to see documentation
 - [ ] Unify all validator to unique code
-- [ ] Lint all files
-- [ ] Pipes
+- [x] Lint all files
+- [x] Pipes
 - [ ] Create default service with toaster
 - [ ] Create a example project to show how to use
 - [ ] Create a static page with githubPages
