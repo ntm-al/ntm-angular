@@ -8,6 +8,7 @@
 - Phone
 - Required
 - Twitter
+- MatchPassword
 
 ## Directives
 
