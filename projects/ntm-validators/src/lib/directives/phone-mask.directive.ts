@@ -35,17 +35,17 @@ export class PhoneMaskDirective implements OnInit {
       return '';
     }
     if (phone.length <= 2) {
-      return phone.replace(/^(\d{0,2})/, '$1');
+      return phone.replace(/^(\d{0,2})/, '($1');
     }
     if (phone.length <= 7) {
-      return phone.replace(/^(\d{0,2})(.*)/, '$1 $2');
+      return phone.replace(/^(\d{0,2})(.*)/, '($1) $2');
     }
     if (phone.length <= 10 && this.maskType == 9) {
-      return phone.replace(/^(\d{0,2})(\d{0,5})(.*)/, '$1 $2-$3');
+      return phone.replace(/^(\d{0,2})(\d{0,5})(.*)/, '($1) $2-$3');
     }
     if (phone.length <= 10) {
-      return phone.replace(/^(\d{0,2})(\d{0,4})(.*)/, '$1 $2-$3');
+      return phone.replace(/^(\d{0,2})(\d{0,4})(.*)/, '($1) $2-$3');
     }
-    return phone.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,3})/, '$1 $2-$3-$4').substr(0, 14);
+    return phone.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,3})/, '($1) $2-$3-$4').substr(0, 14);
   }
 }

@@ -24,7 +24,7 @@ describe('PhoneMaskDirective', () => {
   it('should apply mask for number with 8 digits', () => {
     const arr = {
       input: '8299205555',
-      expect: '82 9920-5555',
+      expect: '(82) 9920-5555',
     };
     const input = inputEl.nativeElement;
     input.value = arr.input;
@@ -47,7 +47,7 @@ describe('PhoneMaskDirective', () => {
   it('should apply mask for number with 9 digits', () => {
     const arr = {
       input: '82999205555',
-      expect: '82 999-205-555',
+      expect: '(82) 999-205-555',
     };
     const input = inputEl.nativeElement;
     input.value = arr.input;
@@ -60,15 +60,15 @@ describe('PhoneMaskDirective', () => {
     const arr = [
       {
         input: '82999',
-        expect: '82 999',
+        expect: '(82) 999',
       },
       {
         input: '8299999',
-        expect: '82 99999',
+        expect: '(82) 99999',
       },
       {
         input: '82999999999',
-        expect: '82 999-999-999',
+        expect: '(82) 999-999-999',
       },
     ];
     const phoneMask = new PhoneMaskDirective(fixture);
