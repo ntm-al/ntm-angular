@@ -8,7 +8,7 @@ export function ValidatePhone(control: AbstractControl): IValidator {
     return null;
   }
 
-  const ZIP_CELL_PHONE = /^[1-9][0-9]?[ ]?[9][3-9][0-9]{3}?[-]?[0-9]{4}$/;
+  const ZIP_CELL_PHONE = /^[1-9][0-9]?[ ]?[9][3-9][0-9][-][0-9]{3}?[-]?[0-9]{3}$/;
   const ZIP_PHONE = /^[1-9][0-9]?[ ]?[2-6][0-9]{3}?[-]?[0-9]{4}$/;
   const dddState = [
     11,
