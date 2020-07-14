@@ -1,23 +1,13 @@
 import { AbstractControl } from '@angular/forms';
+import { IValidator } from '../interfaces/validators.interface';
 
-export function ValidateRequired(control: AbstractControl) {
+export function ValidateRequired(control: AbstractControl): IValidator {
   if (!control.value || control.value === '') {
     return {
       validate: false,
-      message: 'Campo obrigatório'
+      message: 'Campo obrigatório',
     };
   }
 
   return null;
-}
-
-export class ValidateFields {
-  thisUpdateValidators(form) {
-    for (const key in form.controls) {
-      if (form.controls.hasOwnProperty(key)) {
-        form.controls[key].markAsTouched();
-      }
-    }
-    return form;
-  }
 }

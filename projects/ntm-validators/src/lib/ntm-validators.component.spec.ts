@@ -7,10 +7,9 @@ describe('NtmValidatorsComponent', () => {
   let fixture: ComponentFixture<NtmValidatorsComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ NtmValidatorsComponent ]
-    })
-    .compileComponents();
+    void TestBed.configureTestingModule({
+      declarations: [NtmValidatorsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,6 +19,6 @@ describe('NtmValidatorsComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    void expect(component).toBeTruthy();
   });
 });

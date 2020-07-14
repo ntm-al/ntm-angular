@@ -1,20 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appCpfMask]'
+  selector: '[appCpfMask]',
 })
 export class CpfMaskDirective implements OnInit {
   private previousValue = null;
 
-  constructor(private el: ElementRef) {
-  }
-
-  ngOnInit() {
-    setTimeout(() => this.setMask(), 0);
-  }
-
+  constructor(private el: ElementRef) {}
   @HostListener('input')
-  setMask() {
+  setMask(): void {
     const mask = this.createMask(this.el.nativeElement.value);
     if (this.el.nativeElement.value !== this.previousValue) {
       this.el.nativeElement.value = mask;
@@ -23,7 +19,11 @@ export class CpfMaskDirective implements OnInit {
     }
   }
 
-  createMask(cpf) {
+  ngOnInit(): void {
+    setTimeout(() => this.setMask(), 0);
+  }
+
+  createMask(cpf: string): string {
     let newVal = cpf.replace(/\D/g, '');
     if (newVal.length === 0) {
       newVal = '';
@@ -39,4 +39,3 @@ export class CpfMaskDirective implements OnInit {
     return newVal;
   }
 }
-

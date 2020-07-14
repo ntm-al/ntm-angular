@@ -1,13 +1,13 @@
 import { AbstractControl } from '@angular/forms';
+import { IValidator } from '../interfaces/validators.interface';
 
-export function ValidateCpf(control: AbstractControl) {
-  const value = control.value;
+export function ValidateCpf(control: AbstractControl): IValidator {
+  const value = control.value as string;
 
   if (value) {
-    let cpf;
-    let v;
+    let v: boolean;
 
-    cpf = value.replace(/[^\d]+/g, '');
+    const cpf: string = value.replace(/[^\d]+/g, '');
 
     if (
       cpf === '00000000000' ||
@@ -28,8 +28,8 @@ export function ValidateCpf(control: AbstractControl) {
       };
     }
 
-    const c = cpf.substr(0, 9);
-    const dv = cpf.substr(9, 2);
+    const c: string = cpf.substr(0, 9);
+    const dv: string = cpf.substr(9, 2);
     let d1 = 0;
     v = false;
 
@@ -41,7 +41,7 @@ export function ValidateCpf(control: AbstractControl) {
     }
 
     for (let i = 0; i < 9; i++) {
-      d1 += c.charAt(i) * (10 - i);
+      d1 += (10 - i) * parseInt(c.charAt(i));
     }
 
     if (d1 === 0) {
@@ -68,7 +68,7 @@ export function ValidateCpf(control: AbstractControl) {
 
     d1 *= 2;
     for (let i = 0; i < 9; i++) {
-      d1 += c.charAt(i) * (11 - i);
+      d1 += parseInt(c.charAt(i)) * (11 - i);
     }
 
     d1 = 11 - (d1 % 11);
