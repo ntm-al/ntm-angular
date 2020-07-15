@@ -3,11 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ZipCodeMaskDirective } from './zip-code-mask.directive';
 
 @Component({
-  template: '<input type="text" twitterMask>',
+  template: '<input type="text" appZipCodeMask>',
 })
 class TestZipCodeMaskDirectiveComponent {}
 
-describe('PhoneMaskDirective', () => {
+describe('ZipCodeMaskDirective', () => {
   let fixture: ComponentFixture<TestZipCodeMaskDirectiveComponent>;
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
