@@ -34,7 +34,7 @@ export class ZipCodeMaskDirective implements OnInit {
       return '';
     }
 
-    if (zipCode.length <= 10) {
+    if (zipCode.length <= 9) {
       zipCode = zipCode.replace(/\D/g, '');
       zipCode = zipCode.replace(/^(\d{5})(\d)/, '$1-$2');
       return zipCode;
