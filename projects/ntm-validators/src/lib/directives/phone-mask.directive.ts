@@ -46,6 +46,6 @@ export class PhoneMaskDirective implements OnInit {
     if (phone.length <= 10) {
       return phone.replace(/^(\d{0,2})(\d{0,4})(.*)/, '($1) $2-$3');
     }
-    return phone.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,3})/, '($1) $2-$3-$4').substr(0, 14);
+    return phone.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,3})/, '($1) $2-$3-$4').substr(0, 16);
   }
 }
