@@ -10,14 +10,15 @@ jobs:
       - name: Set Git Version
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      # - name: Set npm configs
-      #   run: npm config set //registry.npmjs.org/:_authToken=$TOKEN
+      - name: Set npm configs
+        run: npm config set //registry.npmjs.org/:_authToken=$TOKEN
       # - name: Install dependencies
       #   run: npm install
       - name: Set new package Version
         run: |
           cd projects/ntm-validators/
           npm version $RELEASE_VERSION
+          pwd
         # cd projects/ntm-validators/ &
         # npm version $RELEASE_VERSION &
         # cd ../../
