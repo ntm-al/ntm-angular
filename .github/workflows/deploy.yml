@@ -10,21 +10,24 @@ jobs:
       - name: Set Git Version
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      - name: Set npm configs
-        run: npm config set //registry.npmjs.org/:_authToken=$TOKEN
-      - name: Install dependencies
-        run: npm install
+      # - name: Set npm configs
+      #   run: npm config set //registry.npmjs.org/:_authToken=$TOKEN
+      # - name: Install dependencies
+      #   run: npm install
       - name: Set new package Version
         run: |
           cd projects/ntm-validators/ 
           npm version $RELEASE_VERSION
           cd ../../
-      - name: Build ntm-validators
-        run: npx ng build ntm-validators --prod
+      # - name: Build ntm-validators
+      #   run: npx ng build ntm-validators --prod
       - name: Publishing ntm-validators
         run: |
-          cd dist/ntm-validators
-          npm publish
+          pwd
+          cd projects/ntm-validators/
+          cat package.json
+        # cd dist/ntm-validators
+        # npm publish
         env:
           TOKEN: ${{secrets.NPM_TOKEN}}
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
