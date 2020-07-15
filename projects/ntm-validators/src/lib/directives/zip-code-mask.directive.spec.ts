@@ -19,15 +19,15 @@ describe('ZipCodeMaskDirective', () => {
     const arr = [
       {
         input: '57072120',
-        expect: '57.072-120',
+        expect: '57072-120',
       },
       {
         input: '57038000',
-        expect: '57.038-000',
+        expect: '57038-000',
       },
       {
         input: '57030170',
-        expect: '57.030-170',
+        expect: '57030-170',
       },
     ];
     const zipCodeMask = new ZipCodeMaskDirective(fixture);
