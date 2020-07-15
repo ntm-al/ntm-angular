@@ -9,9 +9,11 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           npm config set //registry.npmjs.org/:_authToken=$TOKEN
+          echo $SOURCE_TAG
           npm install
           npx ng build ntm-validators --prod
           cd dist/ntm-validators
           npm publish
         env:
           TOKEN: ${{secrets.NPM_TOKEN}}
+          SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
