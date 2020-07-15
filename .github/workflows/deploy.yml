@@ -7,8 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - run: |
-          echo $SOURCE_TAG
+          echo $RELEASE_VERSION
         # npm config set //registry.npmjs.org/:_authToken=$TOKEN
         # npm install
         # npx ng build ntm-validators --prod
@@ -16,4 +19,4 @@ jobs:
         # npm publish
         env:
           TOKEN: ${{secrets.NPM_TOKEN}}
-          SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
