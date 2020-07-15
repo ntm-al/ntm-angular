@@ -25,7 +25,8 @@ jobs:
       - name: Publishing ntm-validators
         run: |
           cd dist/ntm-validators
-          npm publish
+          cat package.json
+        # npm publish
         env:
           TOKEN: ${{secrets.NPM_TOKEN}}
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
