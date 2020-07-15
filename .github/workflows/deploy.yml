@@ -1,0 +1,17 @@
+name: Build and Publish
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          npm config set //registry.npmjs.org/:_authToken=$TOKEN
+          npm install
+          npx ng build ntm-validators --prod
+          cd dist/ntm-validators
+          npm publish
+        env:
+          TOKEN: ${{secrets.NPM_TOKEN}}
