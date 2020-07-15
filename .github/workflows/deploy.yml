@@ -7,16 +7,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set output
+      - name: Set Git Version
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      - run: |
-          echo $RELEASE_VERSION
-        # npm config set //registry.npmjs.org/:_authToken=$TOKEN
-        # npm install
-        # npx ng build ntm-validators --prod
-        # cd dist/ntm-validators
-        # npm publish
+      - name: Set npm configs
+        run: npm config set //registry.npmjs.org/:_authToken=$TOKEN
+      - name: Install dependencies
+        run: npm install
+      - name: Set new package Version
+        run: |
+          cd projects/ntm-validators/ 
+          npm version $RELEASE_VERSION
+          cd ../../
+      - name: Build ntm-validators
+        run: npx ng build ntm-validators --prod
+      - name: Publishing ntm-validators
+        run: |
+          cd dist/ntm-validators
+          npm publish
         env:
           TOKEN: ${{secrets.NPM_TOKEN}}
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
