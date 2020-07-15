@@ -16,6 +16,7 @@ jobs:
         run: |
           cd projects/ntm-validators/
           npm version $RELEASE_VERSION
+          echo $RELEASE_VERSION
           cat package.json
           cd ../../
       - name: Install dependencies
@@ -27,6 +28,8 @@ jobs:
       - name: Publishing ntm-validators
         run: |
           cd dist/ntm-validators
+          npm version $RELEASE_VERSION
+          echo $RELEASE_VERSION
           cat package.json
         # npm publish
         env:
