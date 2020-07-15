@@ -21,7 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build ntm-validators
-        run: npx ng build ntm-validators --prod
+        run: |
+          npx ng build ntm-validators --prod
+          cat projects/ntm-validators/package.json
       - name: Publishing ntm-validators
         run: |
           cd dist/ntm-validators
