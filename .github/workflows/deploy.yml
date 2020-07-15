@@ -16,16 +16,14 @@ jobs:
       #   run: npm install
       - name: Set new package Version
         run: |
-          cd projects/ntm-validators/ 
-          npm version $RELEASE_VERSION
+          cd projects/ntm-validators/ & 
+          npm version $RELEASE_VERSION &
           cd ../../
-      # - name: Build ntm-validators
-      #   run: npx ng build ntm-validators --prod
-      - name: Publishing ntm-validators
-        run: |
           pwd
-          cd projects/ntm-validators/
-          cat package.json
+        # - name: Build ntm-validators
+        #   run: npx ng build ntm-validators --prod
+        # - name: Publishing ntm-validators
+        #   run: |
         # cd dist/ntm-validators
         # npm publish
         env:
