@@ -8,6 +8,7 @@
 - Phone
 - Required
 - Twitter
+- MatchPassword
 
 ## Directives
 
@@ -15,6 +16,7 @@
 - Instagram
 - Phone (mask)
 - Twitter
+- Cep (mask)
 
 ## Pipes (in progress)
 

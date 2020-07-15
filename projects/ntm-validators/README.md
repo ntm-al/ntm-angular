@@ -16,6 +16,7 @@
 - Instagram
 - Phone (mask)
 - Twitter
+- Cep (mask)
 
 ## Pipes (in progress)
 

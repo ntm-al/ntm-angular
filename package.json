@@ -1,5 +1,6 @@
 {
   "name": "ntm-angular",
+  "license": "MIT",
   "version": "0.0.97",
   "scripts": {
     "ng": "ng",
@@ -10,7 +11,6 @@
     "lint": "eslint -c .eslintrc.js --ext .ts ./projects --fix",
     "postinstall": "ngcc"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.9",
     "@angular/common": "~9.1.9",
