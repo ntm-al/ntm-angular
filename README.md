@@ -41,3 +41,4 @@ npm publish
 - [x] Pipes
 - [ ] Create a example project to show how to use
 - [ ] Create a static page with githubPages
+- [ ] Create directive to currency
