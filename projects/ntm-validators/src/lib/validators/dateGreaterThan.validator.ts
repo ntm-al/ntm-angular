@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { AbstractControl } from '@angular/forms';
 
-export function dateGreaterThan(controlToCompare: AbstractControl): any {
+export function ValidateDateGreaterThan(controlToCompare: AbstractControl): any {
   let flagFirst = true;
   return (control: AbstractControl) => {
     if (flagFirst) {
