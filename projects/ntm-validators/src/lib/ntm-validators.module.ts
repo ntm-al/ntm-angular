@@ -8,6 +8,7 @@ import { DifferenceTimePipe } from './pipes/difference-time.pipe';
 import { NumberToMonthPipe } from './pipes/number-to-month.pipe';
 import { FirstAndLastNamePipe } from './pipes/first-and-last-name.pipe';
 import { ZipCodeMaskDirective } from './directives/zip-code-mask.directive';
+import { OnlyNumbersDirective } from './directives/only-number.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ZipCodeMaskDirective } from './directives/zip-code-mask.directive';
     FirstAndLastNamePipe,
     NumberToMonthPipe,
     ZipCodeMaskDirective,
+    OnlyNumbersDirective,
   ],
   imports: [],
   exports: [
@@ -32,6 +34,7 @@ import { ZipCodeMaskDirective } from './directives/zip-code-mask.directive';
     FirstAndLastNamePipe,
     NumberToMonthPipe,
     ZipCodeMaskDirective,
+    OnlyNumbersDirective,
   ],
 })
 export class NtmValidatorsModule {}
