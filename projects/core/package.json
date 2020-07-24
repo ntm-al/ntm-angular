@@ -1,9 +1,7 @@
 {
-  "name": "ntm-validators",
+  "name": "@ntm/angular",
   "license": "MIT",
-  "author": {
-    "name": "NTM Team"
-  },
+  "author": "NTM Team <mmidia@al.senai.br>",
   "version": "0.0.94",
   "peerDependencies": {
     "@angular/common": "^9.1.9",
@@ -15,6 +13,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/senai-ntm/ntm-angular.git",
-    "directory": "projects/ntm-validators"
+    "directory": "projects/core"
+  },
+  "bugs": {
+    "url": "https://github.com/senai-ntm/ntm-angular/issues"
   }
 }
+
