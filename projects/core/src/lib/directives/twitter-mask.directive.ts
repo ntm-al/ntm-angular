@@ -3,7 +3,7 @@
 import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appTwitterMask]',
+  selector: '[ntmTwitterMask]',
 })
 export class TwitterMaskDirective implements OnInit {
   @Input('twitterMask') maskType: any;

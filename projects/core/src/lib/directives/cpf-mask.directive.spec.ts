@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 import { CpfMaskDirective } from './cpf-mask.directive';
 
 @Component({
-  template: '<input type="text" appCpfMask>',
+  template: '<input type="text" ntmCpfMask>',
 })
 class TestCpfMaskDirectiveComponent {}
 

@@ -3,7 +3,7 @@
 import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appZipCodeMask]',
+  selector: '[ntmZipCodeMask]',
 })
 export class ZipCodeMaskDirective implements OnInit {
   @Input('zipCodeMask') maskType: any;

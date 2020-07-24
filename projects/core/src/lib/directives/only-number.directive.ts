@@ -5,7 +5,7 @@
 import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appOnlyNumbers]',
+  selector: '[ntmOnlyNumbers]',
 })
 export class OnlyNumbersDirective implements OnInit {
   private previousValue = null;
