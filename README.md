@@ -26,8 +26,8 @@
 
 ## Publishing
 
-ng build ntm-validators --prod
-cd dist/ntm-validators
+ng build core --prod
+cd dist/core
 npm publish
 
 ## TODO:

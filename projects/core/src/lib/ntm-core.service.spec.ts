@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NtmValidatorsService } from './ntm-validators.service';
+import { NtmCoreService } from './ntm-core.service';
 
-describe('NtmValidatorsService', () => {
-  let service: NtmValidatorsService;
+describe('NtmCoreService', () => {
+  let service: NtmCoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NtmValidatorsService);
+    service = TestBed.inject(NtmCoreService);
   });
 
   it('should be created', () => {

@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NtmValidatorsComponent } from './ntm-validators.component';
+import { NtmCoreComponent } from './ntm-core.component';
 
-describe('NtmValidatorsComponent', () => {
-  let component: NtmValidatorsComponent;
-  let fixture: ComponentFixture<NtmValidatorsComponent>;
+describe('NtmCoreComponent', () => {
+  let component: NtmCoreComponent;
+  let fixture: ComponentFixture<NtmCoreComponent>;
 
   beforeEach(async(() => {
     void TestBed.configureTestingModule({
-      declarations: [NtmValidatorsComponent],
+      declarations: [NtmCoreComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NtmValidatorsComponent);
+    fixture = TestBed.createComponent(NtmCoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,10 +3,10 @@
 import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appZipCodeMask]',
+  selector: '[ntmPhoneMask]',
 })
-export class ZipCodeMaskDirective implements OnInit {
-  @Input('zipCodeMask') maskType: any;
+export class PhoneMaskDirective implements OnInit {
+  @Input('phoneMask') maskType: any;
   private previousValue = null;
 
   constructor(private el: ElementRef) {}
@@ -29,17 +29,23 @@ export class ZipCodeMaskDirective implements OnInit {
     setTimeout(() => this.setMask(), 0);
   }
 
-  createMask(zipCode: string): string {
-    if (zipCode.length == 0) {
+  createMask(phone: string): string {
+    phone = phone.replace(/\D/g, '');
+    if (phone.length == 0) {
       return '';
     }
-
-    if (zipCode.length <= 9) {
-      zipCode = zipCode.replace(/\D/g, '');
-      zipCode = zipCode.replace(/^(\d{5})(\d)/, '$1-$2');
-      return zipCode;
+    if (phone.length <= 2) {
+      return phone.replace(/^(\d{0,2})/, '($1');
     }
-
-    return zipCode.substr(0, 9);
+    if (phone.length <= 7) {
+      return phone.replace(/^(\d{0,2})(.*)/, '($1) $2');
+    }
+    if (phone.length <= 10 && this.maskType == 9) {
+      return phone.replace(/^(\d{0,2})(\d{0,5})(.*)/, '($1) $2-$3');
+    }
+    if (phone.length <= 10) {
+      return phone.replace(/^(\d{0,2})(\d{0,4})(.*)/, '($1) $2-$3');
+    }
+    return phone.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,3})/, '($1) $2-$3-$4').substr(0, 16);
   }
 }

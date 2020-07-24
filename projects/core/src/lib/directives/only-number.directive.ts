@@ -5,7 +5,7 @@
 import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appOnlyNumbers]',
+  selector: '[ntmOnlyNumbers]',
 })
 export class OnlyNumbersDirective implements OnInit {
   private previousValue = null;
@@ -16,7 +16,7 @@ export class OnlyNumbersDirective implements OnInit {
   private specialKeys: Array<string> = ['Backspace', 'Tab', 'End', 'Home', '-'];
 
   constructor(private el: ElementRef) {}
-  static createMask(value): string {
+  static createMask(value: string): string {
     // eslint-disable-next-line @typescript-eslint/no-inferrable-types
     const regex: RegExp = new RegExp(/^-?[0-9]+(\.[0-9]*){0,1}$/g);
     if (!String(value).match(regex)) {
@@ -36,7 +36,7 @@ export class OnlyNumbersDirective implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     setTimeout(() => this.setMask(), 0);
   }
 }

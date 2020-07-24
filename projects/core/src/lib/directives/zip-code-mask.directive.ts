@@ -3,10 +3,10 @@
 import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appTwitterMask]',
+  selector: '[ntmZipCodeMask]',
 })
-export class TwitterMaskDirective implements OnInit {
-  @Input('twitterMask') maskType: any;
+export class ZipCodeMaskDirective implements OnInit {
+  @Input('zipCodeMask') maskType: any;
   private previousValue = null;
 
   constructor(private el: ElementRef) {}
@@ -29,20 +29,17 @@ export class TwitterMaskDirective implements OnInit {
     setTimeout(() => this.setMask(), 0);
   }
 
-  createMask(twitter: string): string {
-    if (twitter.length == 0) {
+  createMask(zipCode: string): string {
+    if (zipCode.length == 0) {
       return '';
     }
 
-    if (twitter.length <= 16) {
-      twitter = twitter.replace(
-        /[&\/\\#,+()$~%.'"@:;*?!|<>=¨`´^{}[ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ-]/g,
-        ''
-      );
-      twitter = twitter.replace(/]/g, '');
-      return '@' + twitter;
+    if (zipCode.length <= 9) {
+      zipCode = zipCode.replace(/\D/g, '');
+      zipCode = zipCode.replace(/^(\d{5})(\d)/, '$1-$2');
+      return zipCode;
     }
 
-    return twitter.substr(0, 15);
+    return zipCode.substr(0, 9);
   }
 }

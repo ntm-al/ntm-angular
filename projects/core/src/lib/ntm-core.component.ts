@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ntm-validators',
+  selector: 'lib-core',
   template: `
     <p>
-      ntm-validators works!
+      core works!
     </p>
   `,
   styles: [],
 })
-export class NtmValidatorsComponent implements OnInit {
+export class NtmCoreComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

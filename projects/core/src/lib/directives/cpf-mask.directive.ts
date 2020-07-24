@@ -3,7 +3,7 @@
 import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appCpfMask]',
+  selector: '[ntmCpfMask]',
 })
 export class CpfMaskDirective implements OnInit {
   private previousValue = null;

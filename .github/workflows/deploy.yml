@@ -1,9 +1,9 @@
-name: Build and Publish
+name: Lint and Publish
 on:
   release:
     types: [published]
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,11 +12,13 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Install dependencies
         run: npm install
-      - name: Build ntm-validators
-        run: npx ng build ntm-validators --prod
-      - name: Publishing ntm-validators
+      - name: Running lint
+        run: npm run lint
+      - name: Build @ntm/core
+        run: npx ng build core --prod
+      - name: Publishing core
         run: |
-          cd dist/ntm-validators
+          cd dist/core
           npm version $RELEASE_VERSION
           npm config set //registry.npmjs.org/:_authToken=$TOKEN
           npm publish
