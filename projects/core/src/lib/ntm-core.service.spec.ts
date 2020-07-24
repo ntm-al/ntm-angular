@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CoreService } from './core.service';
+import { NtmCoreService } from './ntm-core.service';
 
-describe('CoreService', () => {
-  let service: CoreService;
+describe('NtmCoreService', () => {
+  let service: NtmCoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CoreService);
+    service = TestBed.inject(NtmCoreService);
   });
 
   it('should be created', () => {

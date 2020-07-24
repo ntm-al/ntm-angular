@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CoreComponent } from './core.component';
+import { NtmCoreComponent } from './ntm-core.component';
 import { CpfMaskDirective } from './directives/cpf-mask.directive';
 import { InstagramMaskDirective } from './directives/instagram-mask.directive';
 import { PhoneMaskDirective } from './directives/phone-mask.directive';
@@ -12,7 +12,7 @@ import { OnlyNumbersDirective } from './directives/only-number.directive';
 
 @NgModule({
   declarations: [
-    CoreComponent,
+    NtmCoreComponent,
     CpfMaskDirective,
     InstagramMaskDirective,
     PhoneMaskDirective,
@@ -25,7 +25,7 @@ import { OnlyNumbersDirective } from './directives/only-number.directive';
   ],
   imports: [],
   exports: [
-    CoreComponent,
+    NtmCoreComponent,
     CpfMaskDirective,
     InstagramMaskDirective,
     PhoneMaskDirective,

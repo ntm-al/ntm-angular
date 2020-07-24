@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [],
 })
-export class CoreComponent implements OnInit {
+export class NtmCoreComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
