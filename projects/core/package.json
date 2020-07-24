@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/senai-ntm/ntm-angular.git",
+    "url": "https://github.com/ntm-al/ntm-angular.git",
     "directory": "projects/core"
   },
   "bugs": {
-    "url": "https://github.com/senai-ntm/ntm-angular/issues"
+    "url": "https://github.com/ntm-al/ntm-angular/issues"
   }
 }
