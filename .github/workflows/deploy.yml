@@ -1,7 +1,8 @@
 name: Lint and Publish
 on:
-  release:
-    types: [published]
+  push
+  # release:
+  #   types: [published]
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -17,16 +18,16 @@ jobs:
       - name: Set Git Version
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      - name: Install dependencies
-        run: npm install
-      - name: Build @ntm/core
-        run: npx ng build core --prod
-      - name: Publishing core
-        run: |
-          cd dist/core
-          npm version $RELEASE_VERSION
-          npm config set //registry.npmjs.org/:_authToken=$TOKEN
-          npm publish
+      # - name: Install dependencies
+      #   run: npm install
+      # - name: Build @ntm/core
+      #   run: npx ng build core --prod
+      # - name: Publishing core
+        # run: |
+        #   cd dist/core
+        #   npm version $RELEASE_VERSION
+        #   npm config set //registry.npmjs.org/:_authToken=$TOKEN
+        #   npm publish
         env:
           TOKEN: ${{secrets.NPM_TOKEN}}
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
