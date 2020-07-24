@@ -1,9 +1,16 @@
-name: Build and Publish
+name: Lint and Publish
 on:
   release:
     types: [published]
 jobs:
-  build:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: npm install
+      - name: Running lint
+        run: npm run lint
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
