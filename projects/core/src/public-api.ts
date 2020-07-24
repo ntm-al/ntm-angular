@@ -1,8 +1,8 @@
 /*
- * Public API Surface of ntm-validators
+ * Public API Surface of core
  */
 
-export * from './lib/ntm-validators.service';
-export * from './lib/ntm-validators.component';
-export * from './lib/ntm-validators.module';
+export * from './lib/core.service';
+export * from './lib/core.component';
+export * from './lib/core.module';
 export * from './lib/validators/index';

@@ -1,11 +1,12 @@
 {
-  "name": "@ntm/angular",
+  "name": "@ntm-al/angular",
   "license": "MIT",
   "author": "NTM Team <mmidia@al.senai.br>",
-  "version": "0.0.94",
+  "version": "0.0.1",
+  "private":false,
   "peerDependencies": {
-    "@angular/common": "^9.1.9",
-    "@angular/core": "^9.1.9"
+    "@angular/common": "~10.0.5",
+    "@angular/core": "~10.0.5"
   },
   "dependencies": {
     "tslib": "^1.10.0"
@@ -19,4 +20,3 @@
     "url": "https://github.com/senai-ntm/ntm-angular/issues"
   }
 }
-
