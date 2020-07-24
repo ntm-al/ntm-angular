@@ -6,8 +6,6 @@ import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
   selector: '[ntmCpfMask]',
 })
 export class CpfMaskDirective implements OnInit {
-  private previousValue = null;
-
   constructor(private el: ElementRef) {}
   @HostListener('input')
   setMask(): void {
@@ -18,7 +16,7 @@ export class CpfMaskDirective implements OnInit {
       this.el.nativeElement.dispatchEvent(new Event('input'));
     }
   }
-
+  private previousValue = null;
   ngOnInit(): void {
     setTimeout(() => this.setMask(), 0);
   }
