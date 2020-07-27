@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 import { PhoneMaskDirective } from './phone-mask.directive';
 
 @Component({
-  template: '<input type="text" phoneMask>',
+  template: '<input type="text" ntmPhoneMask>',
 })
 class TestPhoneMaskDirectiveComponent {}
 
@@ -64,7 +64,7 @@ describe('PhoneMaskDirective', () => {
       },
       {
         input: '8299999',
-        expect: '(82) 99999',
+        expect: '(82) 999-99',
       },
       {
         input: '82999999999',

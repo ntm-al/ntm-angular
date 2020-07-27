@@ -6,7 +6,7 @@ import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/cor
   selector: '[ntmZipCodeMask]',
 })
 export class ZipCodeMaskDirective implements OnInit {
-  @Input('zipCodeMask') maskType: any;
+  @Input('ntmZipCodeMask') maskType: any;
   private previousValue = null;
 
   constructor(private el: ElementRef) {}
