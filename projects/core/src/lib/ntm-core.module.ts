@@ -37,6 +37,7 @@ import { ShimmerDirective } from './directives/shimmer.directive';
     NumberToMonthPipe,
     ZipCodeMaskDirective,
     OnlyNumbersDirective,
+    ShimmerDirective,
   ],
 })
 export class NtmCoreModule {}
