@@ -39,4 +39,4 @@ import { ShimmerDirective } from './directives/shimmer.directive';
     OnlyNumbersDirective,
   ],
 })
-export class CoreModule {}
+export class NtmCoreModule {}
