@@ -9,6 +9,7 @@ import { NumberToMonthPipe } from './pipes/number-to-month.pipe';
 import { FirstAndLastNamePipe } from './pipes/first-and-last-name.pipe';
 import { ZipCodeMaskDirective } from './directives/zip-code-mask.directive';
 import { OnlyNumbersDirective } from './directives/only-number.directive';
+import { ShimmerDirective } from './directives/shimmer.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { OnlyNumbersDirective } from './directives/only-number.directive';
     NumberToMonthPipe,
     ZipCodeMaskDirective,
     OnlyNumbersDirective,
+    ShimmerDirective,
   ],
   imports: [],
   exports: [
