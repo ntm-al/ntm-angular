@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TwitterMaskDirective } from './twitter-mask.directive';
 
 @Component({
-  template: '<input type="text" twitterMask>',
+  template: '<input type="text" ntmTwitterMask>',
 })
 class TestTwitterMaskDirectiveComponent {}
 
