@@ -1,5 +1,7 @@
 # NtmAngular
-
+how to use
+ import 
+ @import '~@ntm-al/angular/styles'; into styles.scss
 ## Validators
 
 - Cpf

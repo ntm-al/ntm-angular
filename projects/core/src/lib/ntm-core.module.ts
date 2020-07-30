@@ -10,6 +10,7 @@ import { FirstAndLastNamePipe } from './pipes/first-and-last-name.pipe';
 import { ZipCodeMaskDirective } from './directives/zip-code-mask.directive';
 import { OnlyNumbersDirective } from './directives/only-number.directive';
 import { ShimmerDirective } from './directives/shimmer.directive';
+import { CnpjMaskDirective } from './directives/cnpj-mask.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ShimmerDirective } from './directives/shimmer.directive';
     ZipCodeMaskDirective,
     OnlyNumbersDirective,
     ShimmerDirective,
+    CnpjMaskDirective,
   ],
   imports: [],
   exports: [
@@ -38,6 +40,7 @@ import { ShimmerDirective } from './directives/shimmer.directive';
     ZipCodeMaskDirective,
     OnlyNumbersDirective,
     ShimmerDirective,
+    CnpjMaskDirective,
   ],
 })
 export class NtmCoreModule {}
