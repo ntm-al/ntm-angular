@@ -1,7 +1,12 @@
 # NtmAngular
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@ntm-al/angular?style=flat-square)
+![npm](https://img.shields.io/npm/dw/@ntm-al/angular)
+![npm](https://img.shields.io/npm/v/@ntm-al/angular)
 how to use
- import 
- @import '~@ntm-al/angular/styles'; into styles.scss
+import
+@import '~@ntm-al/angular/styles'; into styles.scss
+
 ## Validators
 
 - Cpf
