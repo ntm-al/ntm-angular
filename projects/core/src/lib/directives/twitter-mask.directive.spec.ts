@@ -7,7 +7,7 @@ import { TwitterMaskDirective } from './twitter-mask.directive';
 })
 class TestTwitterMaskDirectiveComponent {}
 
-describe('PhoneMaskDirective', () => {
+describe('TwitterMaskDirective', () => {
   let fixture: ComponentFixture<TestTwitterMaskDirectiveComponent>;
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
