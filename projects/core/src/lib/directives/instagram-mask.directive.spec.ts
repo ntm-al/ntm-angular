@@ -12,7 +12,7 @@ describe('InstagramMaskDirective', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      declarations: [TestInstagramMaskDirectiveComponent],
+      declarations: [TestInstagramMaskDirectiveComponent, InstagramMaskDirective],
     }).createComponent(TestInstagramMaskDirectiveComponent);
   });
 
