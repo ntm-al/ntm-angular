@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.cache/
+coverage/
+/tests/**/*.*
+!/tests/**/jsfmt.spec.js
+.editorconfig
+.gitignore
+.prettierignore
