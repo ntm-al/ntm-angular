@@ -3,7 +3,7 @@
   "license": "MIT",
   "author": "NTM Team <mmidia@al.senai.br>",
   "version": "0.0.2",
-  "private":false,
+  "private": false,
   "peerDependencies": {
     "@angular/common": "~10.0.5",
     "@angular/core": "~10.0.5"
