@@ -1,26 +1,23 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Component, DebugElement } from '@angular/core';
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CpfMaskDirective } from './cpf-mask.directive';
 
 @Component({
-  template: '<input type="text" ntmCpfMask>',
+  template: '<input ntmCpfMask>',
 })
 class TestCpfMaskDirectiveComponent {}
 
 describe('CpfMaskDirective', () => {
   let fixture: ComponentFixture<TestCpfMaskDirectiveComponent>;
-  let inputEl: DebugElement;
+  let inputEl: HTMLInputElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TestCpfMaskDirectiveComponent, CpfMaskDirective],
     });
     fixture = TestBed.createComponent(TestCpfMaskDirectiveComponent);
-    inputEl = fixture.debugElement.query(By.css('input'));
+    inputEl = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
   });
 
   it('should mask length equals 14', () => {
@@ -28,20 +25,18 @@ describe('CpfMaskDirective', () => {
       input: '10552295078123123',
       expect: '105.522.950-78',
     };
-    const input = inputEl.nativeElement;
-    input.value = arr.input;
-    input.dispatchEvent(new Event('input'));
-    void expect(input.value.length).toEqual(14);
+    inputEl.value = arr.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value.length).toEqual(14);
   });
   it('should apply mask for cpf', () => {
     const arr = {
       input: '10552295078',
       expect: '105.522.950-78',
     };
-    const input = inputEl.nativeElement;
-    input.value = arr.input;
-    input.dispatchEvent(new Event('input'));
-    void expect(input.value).toBe(arr.expect);
+    inputEl.value = arr.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value).toBe(arr.expect);
   });
 
   it('should not apply mask for not valid cpf', () => {
@@ -49,10 +44,9 @@ describe('CpfMaskDirective', () => {
       input: 'ss-$sdf',
       expect: '',
     };
-    const input = inputEl.nativeElement;
-    input.value = arr.input;
-    input.dispatchEvent(new Event('input'));
-    void expect(input.value).toBe(arr.expect);
+    inputEl.value = arr.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value).toBe(arr.expect);
   });
 
   it('should return correct formated cpf string', () => {
