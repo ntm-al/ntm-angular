@@ -15,12 +15,12 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Test
-        run: npx ng test --code-coverage
-      # - name: Upload coverage to Codecov
-      # uses: codecov/codecov-action@v1
-      # with:
-      #   token: ${{ secrets.CODECOV_TOKEN }}
-      #   file: ./coverage.xml
-      #   files: ./coverage1.xml,./coverage2.xml
-      #   directory: ./coverage/reports/
-      #   fail_ci_if_error: true
+        run: npx ng test --browsers=ChromeHeadlessNoSandbox --codeCoverage=true --watch=false
+      - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: true
+        #   file: ./coverage.xml
+        #   files: ./coverage1.xml,./coverage2.xml
+        #   directory: ./coverage/reports/
