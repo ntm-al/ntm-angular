@@ -1,54 +1,93 @@
-# NtmAngular
+# Ntm Angular
 
 ![Deploy](https://github.com/ntm-al/ntm-angular/workflows/Deploy/badge.svg)
-![Lint and Test](https://github.com/ntm-al/ntm-angular/workflows/Lint%20and%20Test/badge.svg?event=status)
+![Lint](https://github.com/ntm-al/ntm-angular/workflows/Lint/badge.svg)
 ![npm](https://img.shields.io/npm/dw/@ntm-al/angular)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@ntm-al/angular?style=flat-square)
 ![npm](https://img.shields.io/npm/v/@ntm-al/angular)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/ntm-al/ntm-angular/compare)
-how to use
-import
-@import '~@ntm-al/angular/styles'; into styles.scss
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## Validators
+Ntm angular is a package to helps angular developers code faster.
 
+### Installation
+
+Ntm Angular requires [Node.js](https://nodejs.org/) v4+ to run.
+
+Install the dependencies
+
+```bash
+$ npm i @ntm-al/angular
+```
+
+### Setup
+
+**step 1:** add css
+
+- copy [ntmAngular scss](/projects/core/styles.scss) to your project.
+
+```scss
+@import '~@ntm-al/angular/styles';
+```
+
+**step 2:** add NtmCoreModule to app NgModule
+
+```typescript
+import { CommonModule } from '@angular/common';
+import { NtmCoreModule } from '@ntm-al/angular';
+
+@NgModule({
+  imports: [CommonModule, NtmCoreModule],
+  bootstrap: [App],
+  declarations: [App],
+})
+class MainModule {}
+```
+
+# Features!
+
+We have developed Validators, Directives, Pipes...
+
+#### Directives
+
+- Cpf (mask)
+- Cnpj (mask)
+- Phone (mask)
+- Instagram (mask)
+- Input Only numbers
+- Shimmer
+- Twitter (mask)
+- Zipcode (mask)
+
+#### Validators
+
+- Cnpj
 - Cpf
+- Date GreaterThan
 - Email
 - Instagram
+- Match Passwords
 - Phone
 - Required
 - Twitter
-- MatchPassword
 
-## Directives
-
-- Cpf (mask)
-- Instagram
-- Phone (mask)
-- Twitter
-- Cep (mask)
-
-## Pipes (in progress)
+### Pipes (in progress)
 
 - Difference Time
 - First and last name
-- number to month
+- Number to month
 
 ## Publishing
 
-ng build core --prod
-cd dist/core
-npm publish
+```bash
+$ ng build core --prod
+$ cd dist/core
+$ npm publish
+```
 
 ## TODO:
 
-- [ ] Create test to directives
 - [ ] Create test to validators
 - [ ] Create test to pipes
-- [x] Adding ESLint
-- [ ] Typescript integration to see documentation
-- [x] Lint all files
-- [x] Pipes
 - [ ] Create a example project to show how to use
 - [ ] Create a static page with githubPages
 - [ ] Create directive to currency
