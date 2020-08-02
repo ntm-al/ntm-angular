@@ -1,6 +1,8 @@
 # Ntm Angular
 
 ![Deploy](https://github.com/ntm-al/ntm-angular/workflows/Deploy/badge.svg)
+![Test](https://github.com/ntm-al/ntm-angular/workflows/Test/badge.svg)
+[![codecov](https://codecov.io/gh/ntm-al/ntm-angular/branch/master/graph/badge.svg)](https://codecov.io/gh/ntm-al/ntm-angular)
 ![Lint](https://github.com/ntm-al/ntm-angular/workflows/Lint/badge.svg)
 ![npm](https://img.shields.io/npm/dw/@ntm-al/angular)
 ![npm](https://img.shields.io/npm/v/@ntm-al/angular)
