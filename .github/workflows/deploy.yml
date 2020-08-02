@@ -1,4 +1,4 @@
-name: Lint and Publish
+name: Deploy
 on:
   release:
     types: [published]
@@ -12,8 +12,6 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Install dependencies
         run: npm install
-      - name: Running lint
-        run: npm run lint
       - name: Build @ntm/core
         run: npx ng build core --prod
       - name: Publishing core
