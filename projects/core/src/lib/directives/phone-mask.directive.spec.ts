@@ -15,10 +15,10 @@ describe('PhoneMaskDirective', () => {
   let fixture: ComponentFixture<TestPhoneMaskDirectiveComponent>;
   let inputEl: DebugElement;
   beforeEach(() => {
-    fixture = TestBed.configureTestingModule({
-      imports: [],
-      declarations: [TestPhoneMaskDirectiveComponent],
-    }).createComponent(TestPhoneMaskDirectiveComponent);
+    TestBed.configureTestingModule({
+      declarations: [TestPhoneMaskDirectiveComponent, PhoneMaskDirective],
+    });
+    fixture = TestBed.createComponent(TestPhoneMaskDirectiveComponent);
     inputEl = fixture.debugElement.query(By.css('input'));
   });
   it('should apply mask for number with 8 digits', () => {
@@ -63,12 +63,16 @@ describe('PhoneMaskDirective', () => {
         expect: '(82) 999',
       },
       {
-        input: '8299999',
-        expect: '(82) 999-99',
+        input: '82999999',
+        expect: '(82) 9999-99',
       },
       {
         input: '82999999999',
         expect: '(82) 999-999-999',
+      },
+      {
+        input: '8230330113',
+        expect: '(82) 3033-0113',
       },
     ];
     const phoneMask = new PhoneMaskDirective(fixture);
