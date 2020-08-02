@@ -18,6 +18,14 @@ describe('ZipCodeMaskDirective', () => {
     fixture = TestBed.createComponent(TestZipCodeMaskDirectiveComponent);
     inputEl = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
   });
+  it('should mask length equals 9', () => {
+    const arr = {
+      input: '57072120',
+    };
+    inputEl.value = arr.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value.length).toEqual(9);
+  });
   it('should apply mask for zipcode', () => {
     const arr = {
       input: '57072120',
@@ -39,7 +47,7 @@ describe('ZipCodeMaskDirective', () => {
     void expect(inputEl.value).toBe(arr.expect);
   });
 
-  it('should return correct formated zip-code string', () => {
+  it('should return correct formated zipcode string', () => {
     const arr = [
       {
         input: '57072120',
