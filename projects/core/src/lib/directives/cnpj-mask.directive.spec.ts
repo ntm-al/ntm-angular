@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Component, DebugElement } from '@angular/core';
+import { Component } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CnpjMaskDirective } from './cnpj-mask.directive';
@@ -12,33 +9,31 @@ class TestCnpjMaskDirectiveComponent {}
 
 describe('CnpjMaskDirective', () => {
   let fixture: ComponentFixture<TestCnpjMaskDirectiveComponent>;
-  let inputEl: DebugElement;
+  let inputEl: HTMLInputElement;
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TestCnpjMaskDirectiveComponent, CnpjMaskDirective],
     });
     fixture = TestBed.createComponent(TestCnpjMaskDirectiveComponent);
-    inputEl = fixture.debugElement.query(By.css('input'));
+    inputEl = fixture.debugElement.query(By.css('input')).nativeElement as HTMLInputElement;
   });
 
   it('should cnpj mask lenght equals 18', () => {
     const arrage = {
       input: '9550387900010993921382183218',
     };
-    const input = inputEl.nativeElement;
-    input.value = arrage.input;
-    input.dispatchEvent(new Event('input'));
-    void expect(input.value.length).toEqual(18);
+    inputEl.value = arrage.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value.length).toEqual(18);
   });
   it('should apply mask for cnpj', () => {
     const arrage = {
       input: '95503879000109',
       expect: '95.503.879/0001-09',
     };
-    const input = inputEl.nativeElement;
-    input.value = arrage.input;
-    input.dispatchEvent(new Event('input'));
-    void expect(input.value).toBe(arrage.expect);
+    inputEl.value = arrage.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value).toBe(arrage.expect);
   });
 
   it('should not apply mask for not valid cnpj', () => {
@@ -46,10 +41,9 @@ describe('CnpjMaskDirective', () => {
       input: 'ss-$sdf',
       expect: '',
     };
-    const input = inputEl.nativeElement;
-    input.value = arr.input;
-    input.dispatchEvent(new Event('input'));
-    void expect(input.value).toBe(arr.expect);
+    inputEl.value = arr.input;
+    inputEl.dispatchEvent(new Event('input'));
+    void expect(inputEl.value).toBe(arr.expect);
   });
 
   it('should return correct formated cnpj string', () => {
