@@ -8,7 +8,7 @@ import { DifferenceTimePipe } from './pipes/difference-time.pipe';
 import { NumberToMonthPipe } from './pipes/number-to-month.pipe';
 import { FirstAndLastNamePipe } from './pipes/first-and-last-name.pipe';
 import { ZipCodeMaskDirective } from './directives/zip-code-mask.directive';
-import { OnlyNumbersDirective } from './directives/only-number.directive';
+import { OnlyNumbersDirective } from './directives/only-numbers.directive';
 import { ShimmerDirective } from './directives/shimmer.directive';
 import { CnpjMaskDirective } from './directives/cnpj-mask.directive';
 
