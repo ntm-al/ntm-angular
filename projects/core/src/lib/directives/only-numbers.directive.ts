@@ -13,10 +13,10 @@ export class OnlyNumbersDirective implements OnInit {
   @HostListener('ngModelChange')
   @HostListener('input')
   setRule(): void {
-    const mask = this.createRule(this.el.nativeElement.value);
+    const onlyNumbers = this.createRule(this.el.nativeElement.value);
     if (this.el.nativeElement.value !== this.previousValue) {
-      this.el.nativeElement.value = mask;
-      this.previousValue = mask;
+      this.el.nativeElement.value = onlyNumbers;
+      this.previousValue = onlyNumbers;
       this.el.nativeElement.dispatchEvent(new Event('input'));
     }
   }
