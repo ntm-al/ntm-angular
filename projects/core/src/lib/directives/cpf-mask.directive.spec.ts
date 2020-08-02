@@ -16,12 +16,23 @@ describe('CpfMaskDirective', () => {
   let inputEl: DebugElement;
 
   beforeEach(() => {
-    fixture = TestBed.configureTestingModule({
-      declarations: [TestCpfMaskDirectiveComponent],
-    }).createComponent(TestCpfMaskDirectiveComponent);
+    TestBed.configureTestingModule({
+      declarations: [TestCpfMaskDirectiveComponent, CpfMaskDirective],
+    });
+    fixture = TestBed.createComponent(TestCpfMaskDirectiveComponent);
     inputEl = fixture.debugElement.query(By.css('input'));
   });
 
+  it('should mask length equals 14', () => {
+    const arr = {
+      input: '10552295078123123',
+      expect: '105.522.950-78',
+    };
+    const input = inputEl.nativeElement;
+    input.value = arr.input;
+    input.dispatchEvent(new Event('input'));
+    void expect(input.value.length).toEqual(14);
+  });
   it('should apply mask for cpf', () => {
     const arr = {
       input: '10552295078',
@@ -41,7 +52,6 @@ describe('CpfMaskDirective', () => {
     const input = inputEl.nativeElement;
     input.value = arr.input;
     input.dispatchEvent(new Event('input'));
-    inputEl.triggerEventHandler('input', null);
     void expect(input.value).toBe(arr.expect);
   });
 

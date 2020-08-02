@@ -36,6 +36,6 @@ export class CpfMaskDirective implements OnInit {
     } else {
       newVal = newVal.replace(/^(\d{0,3})(\d{0,3})(\d{0,3})(.*)/, '$1.$2.$3-$4');
     }
-    return newVal;
+    return newVal.substr(0, 14);
   }
 }
