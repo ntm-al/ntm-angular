@@ -38,6 +38,6 @@ export class CnpjMaskDirective implements OnInit {
     } else {
       newVal = newVal.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(.*)/, '$1.$2.$3/$4-$5');
     }
-    return newVal;
+    return newVal.substr(0, 18);
   }
 }
